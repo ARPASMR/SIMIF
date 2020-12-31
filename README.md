@@ -29,12 +29,11 @@ Di seguito un esempio di come si presenta l'interfaccia grafica:
  
 ### Avvertenze
 L'output modellistico non presenta modifiche e/o variazioni in relazione alla quota reale della casa comunale (diversa da quella stimata del modello), quindi ad esempio la temperatura sui comuni di montagna può non risultare sempre accurata.
-Le previsioni vengono aggiornate ogni mattina entro le 9:00, al momento non sono previste modifiche al fine di lasciare traccia di run del modello vecchi, quindi quello presente è sempre l'ultimo disponibile (o funzionante).
+Gli aggiornamenti avvengono dopo le emissioni delle ore 00 UTC e 12 UTC del modello COSMO 5M, al momento non vengono archiviati run "vecchi" e viene sempre visualizzato l'ultimo disponibile.
 
 ### Nuovi sviluppi
 Ulteriori campi di sviluppo possono riguardare:
 - L'implementazione di nuovi modelli al fine di allungare l'orizzonte temporale di previsione (es. ECMWF)
-- L'aggiunta del run delle 12 del modello COSMO 5M
 - Discriminazione della neve dalle precipitazioni
 - Aggiunta di nuove variabili da visualizzare
 - Maggiori informazioni (es. quota, coordinate etc. etc.) sul comune selezionato
