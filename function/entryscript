@@ -1,0 +1,24 @@
+#!/bin/bash
+
+chmod -R 777 /opt/simif
+
+while [ true ]
+do
+        orario1="0725"
+        orario2="1830"
+        dataset=nc/sorted_surf_C5M.nc
+        if [[ " $(date +%H%M) " =~ " $orario1 " ]] || [[ " $(date +%H%M) " =~ " $orario2 " ]]
+        then
+                datafull=$(stat -c %y $dataset)
+                dayfile_raw=${datafull:0:10}
+                dayfile=$(date -d "$dayfile_raw" +%Y%m%d)
+                if [[ $[$dayfile - $(date +%Y%m%d)] -eq 0 ]]
+                then
+                        /usr/bin/pkill "R"
+			Rscript /opt/simif/function/db_creation.R
+			(Rscript /opt/simif/function/app.R) &
+                fi
+        fi
+        sleep 1m
+done
+
