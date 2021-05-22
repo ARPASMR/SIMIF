@@ -170,7 +170,7 @@ server <- function(input, output,session){
             layout(title = paste("Velocita' e direzione del vento a ",input$comune," (",input$prov,")",sep=""),
                    yaxis = list(title = "Velocita' vento (m/s)", range = c(0,2*max(as.double(base_comune()$VV)))), annotations = list(x = ymd_hm(base_comune()$Orario),
                         y = as.double(base_comune()$VV), font = list(color = "black", size = 12),
-                        arrowcolor = "black", ax=(as.double(base_comune()$u10)*10), ay=(as.double(base_comune()$v10)*10), arrowsize = 3, arrowwidth = 1, arrowhead = 1)
+                        arrowcolor = "black", ax=-(as.double(base_comune()$u10)*10), ay=(as.double(base_comune()$v10)*10), arrowsize = 3, arrowwidth = 1, arrowhead = 1)
             )
     })
     
